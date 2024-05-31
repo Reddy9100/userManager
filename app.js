@@ -173,7 +173,7 @@ app.get("/users",async(req,res)=>{
   res.status(200).json({message: "users Fetched" , users : users})
 })
 
-app.delete("/users/:email" , async(req, res) => {
+app.delete("/delete-user/:email" , async(req, res) => {
   const { email } = req.params;
   try {
       const user = await User.findOneAndDelete({ email: email });
@@ -188,7 +188,7 @@ app.delete("/users/:email" , async(req, res) => {
 });
 
 
-app.put("/users/:email", async (req, res) => {
+app.put("/update-user/:email", async (req, res) => {
   const { email } = req.params;
   const { name, phoneNumber, gender, address, pincode } = req.body;
   try {
