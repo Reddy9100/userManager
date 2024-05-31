@@ -205,8 +205,19 @@ app.post('/create-user', upload.single('file'), async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // Route to fetch all users
 app.get("/users", async (req, res) => {
+=======
+
+app.get("/users",async(req,res)=>{
+  const users = await User.find({})
+  res.status(200).json({message: "users Fetched" , users : users})
+})
+
+app.delete("/delete-user/:email" , async(req, res) => {
+  const { email } = req.params;
+>>>>>>> 3d64785fc9253cb2648b67e87258ee2d9feb72f1
   try {
     const users = await User.find({});
     res.status(200).json({ message: "Users fetched", users: users });
@@ -231,8 +242,12 @@ app.delete("/users/:email", async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // Route to update a user by email
 app.put("/users/:email", upload.single('file'),async (req, res) => {
+=======
+app.put("/update-user/:email", async (req, res) => {
+>>>>>>> 3d64785fc9253cb2648b67e87258ee2d9feb72f1
   const { email } = req.params;
   const { name, phoneNumber, gender, address, pincode } = req.body;
   const file = req.file ? req.file.filename : null;
