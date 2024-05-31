@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors({origin: 'http://localhost:5173',
+app.use(cors({origin: 'https://master--usermanager-test.netlify.app',
   optionsSuccessStatus: 200}));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // MongoDB Atlas connection URI with the correct credentials and database name
