@@ -115,7 +115,13 @@ const upload = multer({
   }
 });
 
-// Route to verify admin or create if not exists
+
+app.get("/",async(Req,res/=>{
+    res.send("User Manager is Listening")
+})
+
+  
+  / Route to verify admin or create if not exists
 app.post('/create-admin', async (req, res) => {
   const { name, email, password } = req.body;
 
