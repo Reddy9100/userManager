@@ -17,7 +17,7 @@ app.use(cors({origin: 'https://6659ba842ab9850008f6dbd9--usermanager-test.netlif
   optionsSuccessStatus: 200}));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // MongoDB Atlas connection URI with the correct credentials and database name
-const MONGODB_URI = 'mongodb+srv://reddysai:reddy12345@cluster0.ekusftb.mongodb.net/admins_data';
+const MONGODB_URI = 'mongodb+srv://reddysai:swyft@cluster0.ekusftb.mongodb.net/admins_data?retryWrites=true&w=majority&appName=Cluster0';
 
 // Connect to MongoDB Atlas
 mongoose.connect(MONGODB_URI)
